@@ -1,0 +1,24 @@
+﻿@using LogAnalyzer.Extensions
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LogAnalyzerView</title>
+</head>
+<body>
+    <div>
+        <h1> Log analyzer</h1>
+
+        @Html.TextBox("myTextBox", @"C:\__Rafał\REPO\LogAnalyzer\_WORK_FODLER\log.txt", new { @class = "form-control" })
+        <button type="button" onclick="location.href='@Url.Action("Load", "LogAnalyzer")'" </button>
+
+            
+</div>
+</body>
+</html>
+ 
