@@ -1,0 +1,55 @@
+﻿body {
+    background-color: #303030;
+    color: #ffffff;
+	margin: 0 !important;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#header {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.logo {
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e5efff;
+}
+
+#menu 
+{
+	padding: 20px;
+	float: left;
+	width: 10%;
+}
+.option
+{
+	height:25px;
+	padding: 10px;
+	border-bottom: 2px dotted #444444;
+	background-color: #e5efff;
+	text-align: center;
+	color: black;
+}
+
+.option:hover
+{
+	background-color: #ffeaea;
+	cursor: pointer;
+}
+
+.option  a
+{
+	underline: none;
+	text-decoration: none;
+}
+#content{
+	float: left;
+	width: 80%;
+	text-align: justify;
+	padding: 10px;
+}
