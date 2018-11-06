@@ -14,12 +14,14 @@
     <div id="container">
         <h2>Services:</h2>
         <form action="Load" method="post">
-            @foreach (var name in Model.Names)
-            {
-                @Html.CheckBox(name) @name <br />
-                <br />
-            }
-            <button type="submit">Load</button>
+            <fieldset>
+                @foreach (var name in Model.Names)
+                {
+                    //@Html.CheckBox(name) @name <br />
+                    <div class="chboxDiv"><label> <input type="checkbox" name=@name> @name </label></div>
+                }
+            </fieldset>
+            <button>Load</button>
 
         </form>
     </div>

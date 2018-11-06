@@ -30,10 +30,10 @@ namespace LogAnalyzer.Controllers
             LogReaderService reader = new LogReaderService();
             foreach (var key in Request.Form.AllKeys)
             {
-                if (Request.Form[key].Contains("true"))
-                {
+                //if (Request.Form[key].Contains("true"))
+                //{
                     model.ContentListDict.Add(key, reader.Read(model.LogsDict[key]));
-                }
+                //}
             }
 
             return View("LogView", model);
