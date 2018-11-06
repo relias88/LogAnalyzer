@@ -10,7 +10,11 @@ namespace LogAnalyzer.Services
     {
         public string Read(string path)
         {
-            string content = File.ReadAllText(@"C:\__Rafał\REPO\LogAnalyzer\_WORK_FODLER\log.txt");
+            var directory = new DirectoryInfo(path);
+            var myFile = directory.GetFiles()
+             .OrderByDescending(f => f.LastWriteTime)
+             .First();
+            string content = File.ReadAllText(myFile.FullName);
 
             return content;
         }

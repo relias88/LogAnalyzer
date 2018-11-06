@@ -7,9 +7,23 @@ namespace LogAnalyzer.Models
 {
     public class LogAnalyzerModel
     {
-        protected void Action(object sender, EventArgs e)
+        private static  LogAnalyzerModel model;
+        private LogAnalyzerModel()
         {
-            // Here's where you do stuff.
+            
         }
+
+        public static LogAnalyzerModel GetModel()
+        {
+            if (model == null)
+            {
+                model = new LogAnalyzerModel();
+            }
+            return model;
+        }
+        public Dictionary<string, string> LogsDict = new Dictionary<string, string>();
+        public List<string> Names = new List<string>();
+
+        public Dictionary<string, string> ContentListDict = new Dictionary<string, string>();
     }
 }

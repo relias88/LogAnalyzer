@@ -1,0 +1,44 @@
+﻿@model LogAnalyzer.Models.LogAnalyzerModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LogView</title>
+    <style>
+        #logsDiv
+        {
+            background-color: aliceblue;
+        }
+
+        #menuDiv
+        {
+            float:left;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="logsDiv">
+        <h2>LOGS:</h2>
+        <form action="Load" method="post">
+            @foreach (var name in Model.ContentListDict)
+            {
+                @Html.TextArea("txt" + name.Key, name.Value) <br />
+                <br />
+            }
+            <button type="submit">Load</button>
+
+        </form>
+    </div>
+
+    <div id="menuDiv">
+
+    </div>
+</body>
+</html>

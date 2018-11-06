@@ -1,24 +1,27 @@
 ﻿@using LogAnalyzer.Extensions
-@{
-    Layout = null;
-}
+@using LogAnalyzer.Models
+
+@model LogAnalyzerModel
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>LogAnalyzerView</title>
+    <title>Log analyzer</title>
+
+    <link href="~/Styles/LogStyle.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        <h1> Log analyzer</h1>
+    <div id="container">
+        <h2>Services:</h2>
+        <form action="Load" method="post">
+            @foreach (var name in Model.Names)
+            {
+                @Html.CheckBox(name) @name <br />
+                <br />
+            }
+            <button type="submit">Load</button>
 
-        @Html.TextBox("myTextBox", @"C:\__Rafał\REPO\LogAnalyzer\_WORK_FODLER\log.txt", new { @class = "form-control" })
-        <button type="button" onclick="location.href='@Url.Action("Load", "LogAnalyzer")'" </button>
-
-            
-</div>
+        </form>
+    </div>
 </body>
 </html>
- 
